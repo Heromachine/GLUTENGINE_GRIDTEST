@@ -1,0 +1,31 @@
+#version 130
+
+in vec4 s_vPosition;
+in vec4 s_vNormal;
+
+in vec2 s_vTexCoord;
+out vec2 texCoord;
+
+uniform mat4 mM;
+uniform mat4 mV;
+uniform mat4 mP;
+uniform mat4 mRoations;
+
+uniform mat4  vLight;
+
+out vec3 FN;
+out vec3 fL;
+
+out vec3 fE;
+
+void main()
+{
+	FN = (mRotations*s_vNormals).xyz;
+	FL = (vLIght).xyz;
+	fE = (mV*mN*s_vPosition).xyz; 
+
+	texCoord = s_vTexCoord;
+
+	gl_Position = mP * mV* mM * s_vPosition;
+
+}
